@@ -20,18 +20,17 @@ public class Main {
     }
 
     BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    int[] characters = new int[M];
     for(int i = 0; i < M; i++) {
-      characters[i] = Integer.parseInt(br.readLine());
+      int power = Integer.parseInt(br.readLine());
 
       int low = 0;
       int high = N - 1;
       while(low <= high) {
         int mid = (low + high) / 2;
         int midInt = Integer.parseInt(ranks[mid][1]);
-        if(characters[i] <= midInt) {
+        if(power <= midInt) {
           high = mid - 1;
-        } else if(characters[i] > midInt) {
+        } else if(power > midInt) {
           low = mid + 1;
         }
       }
