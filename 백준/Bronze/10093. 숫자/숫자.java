@@ -12,11 +12,11 @@ public class Main {
     BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
     String[] inputs = br.readLine().split(" ");
-    int A = Integer.parseInt(inputs[0]);
-    int B = Integer.parseInt(inputs[1]);
+    long A = Long.parseLong(inputs[0]);
+    long B = Long.parseLong(inputs[1]);
 
-    int bigger = Math.max(A, B);
-    int smaller = Math.min(A, B);
+    long bigger = Math.max(A, B);
+    long smaller = Math.min(A, B);
 
     if(bigger - smaller > 1) {
       bw.write(bigger - smaller - 1 +"\n");
@@ -24,7 +24,7 @@ public class Main {
       bw.write(0 + "\n");
     }
 
-    for(int i = smaller + 1; i < bigger; i++) {
+    for(long i = smaller + 1; i < bigger; i++) {
       bw.write(i + " ");
     }
 
