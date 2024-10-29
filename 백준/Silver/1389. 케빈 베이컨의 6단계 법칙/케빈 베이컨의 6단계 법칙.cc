@@ -43,16 +43,13 @@ int BFS(list<short>* friends, short N)
 	{
 		int sum = 0;
 
-		short* distance = new short[N + 1];
 		bool* visited = new bool[N + 1];
 		for (int j = 1; j <= N; j++)
 		{
-			distance[j] = -1;
 			visited[j] = false;
 		}
 
 		visited[i] = true;
-		distance[i] = 0;
 		queue<info> queue;
 		list<short>::iterator iter;
 		for (iter = friends[i].begin(); iter != friends[i].end(); iter++)
@@ -60,7 +57,6 @@ int BFS(list<short>* friends, short N)
 			if (!visited[*iter])
 			{
 				visited[*iter] = true;
-				distance[*iter] = 1;
 				sum += 1;
 				queue.push(info{ *iter, 2 });
 			}
@@ -76,7 +72,6 @@ int BFS(list<short>* friends, short N)
 				if (!visited[*iter])
 				{
 					visited[*iter] = true;
-					distance[*iter] = information.count;
 					sum += information.count;
 					queue.push(info{ *iter, (short)(information.count + 1) });
 				}
