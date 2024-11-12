@@ -13,8 +13,8 @@ public class Main {
 
     int N = Integer.parseInt(br.readLine());
     HashMap<String, Integer> map = new HashMap<>();
-    int s = Integer.MAX_VALUE;
-    int t = Integer.MAX_VALUE;
+    int s = 0;
+    int t = 1;
     int length = 0;
     String[] arr = new String[N];
     for (int i = 0; i < N; i++) {
@@ -33,11 +33,6 @@ public class Main {
         }
         map.put(key, i);
       }
-    }
-
-    if(s == Integer.MAX_VALUE) {
-      s = 0;
-      t = 1;
     }
     bw.write(arr[s] + "\n" + arr[t]);
     bw.flush();
